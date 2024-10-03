@@ -37,17 +37,6 @@ macro ?!
 		match current split rest, current
 	end macro
 
-	iterate command, display, emit
-		macro calminstruction?.command? arguments&
-			execute =command? arguments
-		end macro
-	end iterate
-
-	macro calminstruction?.err? message&
-		execute =err? message
-		exit
-	end macro
-
 	macro calminstruction?.labels? labels*&
 		local labels
 		arrange temp, =unique labels
